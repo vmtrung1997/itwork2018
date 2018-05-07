@@ -1,23 +1,47 @@
-var express = require('express');
-var router = express.Router();
+var express     = require('express');
+var router      = express.Router();
+var Job     = require('../model/Job');
+var Category     = require('../model/Category');
+var mongoose    = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/itwork2018');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    var links = [
-        { href: 'http://recruit.framgia.vn/', text: 'Framgia Việt Nam Tuyển Dụng' },
-        { href: 'https://www.facebook.com/FramgiaVietnam/', text: 'Framgia Việt Nam Facebook' },
-        { href: 'https://viblo.asia/', text: 'Viblo by Framgia' },
-        { href: '/', text: 'Text Link 1' },
-        { href: '/', text: 'Text Link 2' },
-        { href: '/', text: 'Text Link 3' },
-        { href: '/', text: 'Text Link 4' },
-    ];
-    var headline = 'Framgia Viet Nam';
-    var tagline = "IT là lĩnh vực công bình và không giới hạn, nơi mỗi cá nhân được chia sẻ cơ hội và nhìn nhận thông qua nỗ lực thực sự. Tận dụng những lợi thế của IT mang lại, chúng tôi không ngừng hoàn thiện, trở thành nền tảng cho sự phát triển dịch vụ toàn cầu.";
-    res.render('index', { 
-        links: links,
-        headline: headline,
-        tagline: tagline,
+    Job.find().then(function(jobs) {
+        var data = []
+        new Promise((resolve)=>{
+            var list = []
+            jobs.forEach(function(job,i) {
+                new Promise ((resolve)=>{
+                    var name = []
+                    job.category_id.forEach(cat=>{
+                        name.push(cat.category);
+                    })    
+                    Category.find(
+                        {'_id' : {$in : name}}
+                    ).select({name : true})
+                    .exec((err,result)=>{
+                        resolve(result);
+                    })
+                }).then((result)=>{
+                    var kq ={
+                        name: job.name,
+                        salary: job.salary,
+                        position: job.position,
+                        description_job: job.description_job,
+                        category_id: result
+                    }
+                    data.push(kq);
+                    if(data.length == jobs.length)
+                        resolve(data)
+                })
+            })
+        }).then((data)=>{
+            jobs = data;
+            console.log(data);
+            
+            res.render('index',{jobs : jobs}) 
+        })
     });
 });
 

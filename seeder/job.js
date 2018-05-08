@@ -13,7 +13,7 @@ new Promise((resolve) => {
     });
     async.parallel([
         (callback) => {
-            Category.find({},{ _id: true})
+            Category.find({})
             .exec((err, category_ids) => {
                 callback(null, category_ids);
             }); 
@@ -44,9 +44,18 @@ new Promise((resolve) => {
                     description_job: faker.lorem.paragraphs(2,4),
                     company_id : _.sample(results[1]),
                     category_id : [
-                        {category : list_category[0]},
-                        {category : list_category[1]},
-                        {category : list_category[2]}
+                        {
+                            category : list_category[0]._id,
+                            category_name: list_category[0].name
+                        },
+                        {
+                            category : list_category[1]._id,
+                            category_name: list_category[1].name
+                        },
+                        {
+                            category : list_category[1]._id,
+                            category_name: list_category[1].name
+                        }
                     ]
                 }
             );

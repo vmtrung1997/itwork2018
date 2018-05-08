@@ -6,8 +6,22 @@ var mongoose    = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/itwork2018');
 
 /* GET home page. */
+router.get('/:jobId', function(req, res, next) {
+    const id = req.params.jobId;
+
+    Job.findById(id)
+    .exec()
+    .then(job =>{
+        res.render('single',{ job : job});
+    })
+    .catch(err=>{
+        console.log(err);
+        res.status(500).json({err: err})
+    })
+});
+
 router.get('/', function(req, res, next) {
-    Job.find().then(function(jobs) {
+    Job.find().limit(10).then(function(jobs) {
         var data = []
         new Promise((resolve)=>{
             var list = []
@@ -25,6 +39,7 @@ router.get('/', function(req, res, next) {
                     })
                 }).then((result)=>{
                     var kq ={
+                        _id: job._id,
                         name: job.name,
                         salary: job.salary,
                         position: job.position,
@@ -38,11 +53,10 @@ router.get('/', function(req, res, next) {
             })
         }).then((data)=>{
             jobs = data;
-            console.log(data);
-            
-            res.render('index',{jobs : jobs}) 
+            res.render('index',{jobs : jobs});
         })
     });
 });
+
 
 module.exports = router;

@@ -1,6 +1,5 @@
 <div class="container">
     <div class="job">
-        <% jobs.forEach(function(job){%>
         <div class="row">
             <div class="col-md-1 job-logo">
                 <img src="https://cdn.itviec.com/system/production/employers/logos/103/hanel-software-solutions-logo-65-65.png?1454113619" alt="" width="65px" height="65px">
@@ -17,7 +16,7 @@
                    </div>       
                    <div class="job-bottom">
                         <% job.category_id.forEach(function(cat){%>
-                        <div class="tag-list"><%= cat.name %></div>
+                        <div class="tag-list"><%= cat %></div>
                         <% });%>
                    </div>
             </div>
@@ -28,6 +27,5 @@
                 </div>            
             </div>
         </div>
-        <% });%>
     </div> 
 </div>

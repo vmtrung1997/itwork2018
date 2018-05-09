@@ -58,3 +58,16 @@
   margin: 10px;
   padding: 2px 5px;
 }
+
+.menu-top{
+  background-color: #221F20
+}
+
+.menu-top .menu-single ul{
+    display: inline;
+}
+.menu-top .menu-single ul li{
+  
+  display: inline-block;
+  margin: 5px 10px;
+}

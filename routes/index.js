@@ -3,7 +3,7 @@ var router      = express.Router();
 var Job     = require('../model/Job');
 var Category     = require('../model/Category');
 var mongoose    = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/itwork2018');
+mongoose.connect('mongodb://localhost:27017/mydb');
 
 /* GET home page. */
 router.get('/:jobId', function(req, res, next) {

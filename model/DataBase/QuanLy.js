@@ -4,8 +4,6 @@ const mongoose = require("mongoose");
 const schema = mongoose.Schema;
 const QuanLy = new schema({
     id_QuanLy:{type:Schema.type.ObjectId,required:true},
-    ChucVu:String,
-    CongViec:Text,
     HoTen:String,
     NgaySinh:Date,
     TenTaiKhoan:{type:String,required:true},

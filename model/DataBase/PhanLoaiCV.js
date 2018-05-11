@@ -2,9 +2,8 @@
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
 const TTUngTuyen = new schema({
-    id_TTUngTuyen:{type: Schema.ObjectId},
-    id_Congviec: {type: Schema.ObjectId, ref: 'Congviec'},
-    id_Ungvien: [{type: Schema.ObjectId, ref: 'UngVien'}]
+    id_Phanloai:{type: Schema.ObjectId},
+    Ten : String
 });
 // tao module 
 const ttungtuyen = mongoose.model("TTUngTuyen",TTUngTuyen);

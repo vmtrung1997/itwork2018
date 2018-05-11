@@ -15,7 +15,6 @@ const QuanLy = new schema({
     mail:String,
     HinhAnh:Text,
     GioiTinh:Boolean
-
 });
 // tao module 
 const quanly = mongoose.model("QuanLy",QuanLy);

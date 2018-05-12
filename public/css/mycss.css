@@ -1,0 +1,147 @@
+ #home{
+    height: 580px;
+    font-size: 18px;   
+    background-size: cover;
+    padding-top: 120px;
+    background-color: #16181b;
+}
+#contanLogo{
+    background-color:whitesmoke;
+    height: 50px;
+   padding-top: 0px;
+   margin-top: 0px;
+   align-content: center;
+  
+}
+#logo{
+    height: 50px;
+    padding-right: 0px;
+    margin-right: 0px;
+    
+}
+#TitlePage{
+    height: 50px;
+   
+}
+#introl{
+font-size: 40px;
+font-weight: bold;
+font-style: italic;
+vertical-align: middle;
+padding-top: 10px;
+margin: 0 auto;
+text-align: center;
+}
+#SignIn{
+    margin-left: 2px;
+}
+#main{
+    height: 550px;
+    background-color:aliceblue;
+}
+#search{
+    
+}
+.nav-item:hover{
+    background-color:#16181b;
+}
+#header{
+  overflow-style:scrollbar;
+  background-color:black;
+  z-index: 5;
+  
+  /* width:1140px; */
+  
+}
+#titleheader{
+    
+}
+
+#footer{
+    background-color: #16181b;
+}
+#location{
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 3%;
+    border-top-width: 5px;
+    border-color: #16181b;
+    border-style: solid;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+}
+#titlelocation{
+    padding-left: 1.5%;
+}
+
+#map{
+    height: 400px;
+}
+
+
+#firss{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+#contact{
+    background-image:url('../images/bg_contact.jpg');
+    background-size:cover;
+    padding-bottom: 8%;
+}
+.thum{
+  
+}
+#carouselExampleIndicators{
+    background-color:#16181b;
+    max-height: 490px;
+    width: 100%;
+    overflow: hidden;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+
+@media screen and (max-width:499px){
+    #carouselExampleIndicators{
+    background-color:#16181b;
+    max-height:124px;
+    width: 100%;
+    overflow: hidden;
+    padding-left: 5px;
+    padding-right: 5px;
+}}
+ 
+
+ #detail{
+     text-align: center;
+     margin-top: 30px;
+ }
+ #detail > div{
+     padding: 0 50px;
+ }
+ #detail > div > div > div {
+     background-color: buttonface;
+     border-radius: 50px;
+     
+ }
+ @media screen and(min-width:720px){
+     .size{
+      
+     }
+ }
+ 

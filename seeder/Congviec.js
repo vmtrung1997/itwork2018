@@ -2,8 +2,8 @@ var mongoose      = require('mongoose');
 mongoose.Promise  = require('bluebird');
 const seeder      = require('mongoose-seed');
 const async       = require('async');
-const Category    = require('../model/Category');
-const Company     = require('../model/Company');
+const PhanloaiCV    = require('../model/PhanLoaiCV');
+const TTCongTy     = require('../model/TTCongTy');
 const _           = require('lodash');
 var faker         = require('faker');
 
@@ -13,13 +13,13 @@ new Promise((resolve) => {
     });
     async.parallel([
         (callback) => {
-            Category.find({},{ _id: true})
-            .exec((err, category_ids) => {
-                callback(null, category_ids);
+            PhanloaiCV.find({})
+            .exec((err, phanloai) => {
+                callback(null, phanloai);
             }); 
         },
         (callback) => {
-            Company.find({}, {_id : true})
+            TTCongTy.find({}, {_id : true})
             .exec((err, company_ids) => {
                 callback(null, company_ids);
             });
@@ -38,15 +38,15 @@ new Promise((resolve) => {
                 list_category = _.sampleSize(results[0],3);
             items.push(
                 { 
-                    name: faker.random.words(3,5),
-                    salary : faker.random.number(100,10000),
-                    position: faker.address.streetAddress(),
-                    description_job: faker.lorem.paragraphs(2,4),
-                    company_id : _.sample(results[1]),
-                    category_id : [
-                        {category : list_category[0]},
-                        {category : list_category[1]},
-                        {category : list_category[2]}
+                    Ten: faker.random.words(3,5),
+                    Luong : faker.random.number(100,10000),
+                    Vitri: faker.address.streetAddress(),
+                    Mota: faker.lorem.paragraphs(2,4),
+                    id_Congty : _.sample(results[1]),
+                    id_PhanloaiCV : [
+                        {id : list_category[0]._id, Ten: list_category[0].Ten},
+                        {id : list_category[1]._id, Ten: list_category[1].Ten},
+                        {id : list_category[2]._id, Ten: list_category[2].Ten},
                     ]
                 }
             );
@@ -56,13 +56,13 @@ new Promise((resolve) => {
 }).then((items) => {
     seeder.connect('mongodb://localhost:27017/itwork2018', function() {
         let data = [{
-            'model': 'Job',
+            'model': 'Congviec',
             'documents': items
         }]
         seeder.loadModels([
-            '../model/Job'
+            '../model/Congviec'
         ]);
-        seeder.clearModels(['Job'], function() {
+            seeder.clearModels(['Congviec'], function() {
             seeder.populateModels(data, function() {
             seeder.disconnect();
             });

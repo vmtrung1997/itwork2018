@@ -3,7 +3,7 @@ import { Z_BINARY } from "zlib";
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
 const QuanLy = new schema({
-    id_QuanLy:{type:Schema.type.ObjectId,required:true},
+    id_QuanLy:{type:Schema.ObjectId},
     HoTen:String,
     NgaySinh:Date,
     TenTaiKhoan:{type:String,required:true},

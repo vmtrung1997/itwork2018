@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
 const TTCongTy = new schema({
-    id_CongTy:{type:Schema.type.ObjectId,required:true},
+    id_CongTy:{type:Schema.ObjectId},
     TenCongTy:String,
     Logo: Text,
     DiaChi:[String],  //có thể có nhiều địa điểm

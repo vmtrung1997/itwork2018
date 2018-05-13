@@ -1,10 +1,10 @@
 
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
-const TTUngTuyen = new schema({
+const PhanLoaiCV = new schema({
     id_Phanloai:{type: Schema.ObjectId},
     Ten : String
 });
 // tao module 
-const ttungtuyen = mongoose.model("TTUngTuyen",TTUngTuyen);
-module.exports=ttungtuyen;
+const PhanLoaiCV = mongoose.model("PhanLoaiCV",PhanLoaiCV);
+module.exports=PhanLoaiCV;

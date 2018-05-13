@@ -5,22 +5,22 @@ let items = [];
 for(i=0; i < 15; i++){
     items.push(
         {
-            name : faker.random.words(1,3),
+            name : faker.random.words(1,2),
         }
     )
 }
 
 let data = [{
-    'model': 'Category',
+    'model': 'PhanLoaiCV',
     'documents': items
 }]
 
 // connect mongodb
 seeder.connect('mongodb://localhost:27017/itwork2018', function() {
   seeder.loadModels([
-    '../model/Category'  // load mongoose model 
+    '../model/PhanLoaiCV'  // load mongoose model 
   ]);
-  seeder.clearModels(['Category'], function() {
+  seeder.clearModels(['PhanLoaiCV'], function() {
     seeder.populateModels(data, function() {
       seeder.disconnect();
     });

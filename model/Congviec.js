@@ -7,7 +7,7 @@ const Congviec = new schema({
     Vitri: String,
     Mota: String,
     id_Congty :{type:ObjectId, ref : 'TTCongty'},
-    id_PhanloaiCV: [ //Phân loại công việc theo Skill [PHP, SQL, iOS, Swift, Tester]
+    id_PhanloaiCV: [ //Phân loại công việc theo Skill [PHP, SQL, iOS, Swift, Tester, ...]
         {
             id: { type:ObjectId, ref: 'PhanLoaiCV'},
             Ten: String
@@ -17,6 +17,6 @@ const Congviec = new schema({
 });
 // tao module 
 const congviec = mongoose.model("Congviec",Congviec);
-module.exports=congviec;
+module.exports= congviec;
 
 //model này dùng để lưu thông tin tất cả các ứng viên hay user khi tạo tài khoản trên page

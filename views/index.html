@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    <title>ITJOB</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../public/lib/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/mycss.css">
+    <link rel="stylesheet" type="text/javascript" href="../public/lib/jquery-3.3.1.min.js">
+    <link rel="stylesheet" type="text/javascript" href="../public/lib/bootstrap.js">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css'>
+    <script src='https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js'></script>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div id="contanLogo" class="row">
+        <div>
+                <img class="fa-pull-right" id="TitlePage"  src="../public/images/logo2.png">
+        </div>
+            
+        </div>
+     </div>
+    <div id="header" class="container">
+        
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg navbar-light ">
+                    <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav sticky-top">
+                            <li class="nav-item active">
+                                <a class="nav-link font-weight-bold text-light" href="#home">HOME</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link font-weight-bold text-light" href="#skill">ALL COMPANYS</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link font-weight-bold text-light" href="#project">ALL JOBS</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link font-weight-bold text-light" href="#location">LOCATION</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link font-weight-bold text-light" href="#contact">CONTACT</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle font-weight-bold text-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> TYPE OF WORKS</a>
+                                <div class="dropdown-menu bg-dark">
+                                  <a class="dropdown-item font-weight-bold" href="#">DEVELOPER</a>
+                                  <a class="dropdown-item font-weight-bold" href="#">TESTER</a>
+                                  <a class="dropdown-item font-weight-bold" href="#">BA</a>
+                                  <a class="dropdown-item font-weight-bold" href="#">BA-QC</a>
+                                  <a class="dropdown-item font-weight-bold" href="#">PM</a>
+                                  <a class="dropdown-item font-weight-bold" href="#">TECHNICAL</a>
+                                  <div class="dropdown-divider">QA-QC</div>
+                            
+                                  <a class="dropdown-item" href="#">Separated link</a>
+                                </div>
+                              </li>
+                        </ul>
+                        <form id="search" class="form-inline offset-sm-0 offset-md-1">
+                                <input class="form-control mr-sm-3" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                              </form>
+                              <button id="SignIn" class="btn btn-outline-success  my-2 my-sm-0" type="button">SignIn</button>
+                    </div>
+                </nav>
+            </div>
+
+        </div>
+        <!-- sticky -->
+    </div>
+    <div class="container">
+        <!-- intro -->
+        <div id="introl"> 10000 IT Jobs For Developers</div>
+
+        <div id="main"> 
+         <h1 class="float-left">Top Employers</h1>       
+        
+
+        </div>
+
+
+        
+        <div class="row">
+            <div id="location" class="bg-light col-12 col-md-12 col-md-12">
+                <div id="titlelocation">
+                <h1>LOCATION OFFICE</h1>
+                <h5>135B Trần Hưng Đạo, quận 1, TPHCM</h5>
+                </div>
+                <div>
+                    <div id="map"></div>
+                    <script>
+                        var map;
+
+                        function initMap() {
+                            map = new google.maps.Map(document.getElementById('map'), {
+                                center: {
+                                    lat: 10.767339,
+                                    lng: 106.694792
+                                },
+                                zoom: 17
+                            });
+                            var point = new google.maps.Marker({
+                                position: {
+                                    lat: 10.767339,
+                                    lng: 106.694792
+                                },
+                                map: map
+                            });
+
+                        }
+                    </script>
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOUvpX7-DBx2j4y6KsESxxAI2YYiLU-BE&callback=initMap" async
+                        defer></script>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div id="contact" class=" pt-3 col-12 col-sm-12 col-md-12">
+                <h1>CONTACT</h1>
+                <div class="row mt-3">
+                    <div class="col-md-2 col-sm-2"></div>
+                    <div class="col-md-2 col-sm-2 font-weight-bold">Họ tên</div>
+                    <div class="col-md-6 col-sm-6">
+                        <!-- <input class="size" type="text" name="name" > -->
+                        <input type="text" class="form-control" name="name" placeholder="họ ten">
+                    </div>
+                    <div class="col-md-2 col-sm-2"></div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-2 col-sm-2"></div>
+                    <div class="col-md-2 col-sm-2 font-weight-bold">Email</div>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="email" class="form-control" name="email" placeholder="email">
+                    </div>
+                    <div class="col-md-2 col-sm-2"></div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-2 col-sm-2"></div>
+                    <div class="col-md-2 col-sm-2 font-weight-bold " >Message</div>
+                    <div class="col-md-6 col-sm-6">
+                        <textarea class="form-control" name="message" placeholder="message"></textarea>
+                        <input onclick="create()" type="button" name="sumit" value="sumit" class="btn bg-primary rounded mt-2">
+                    </div>
+                    <div class="col-md-2 col-sm-2"></div>
+                </div>
+                <div class="row mt-2">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="footer" class="col-12 col-sm-12 col-md-12 pt-2">
+                    <div class="pt-5 text-light text-center">
+                            Want to post a job? Contact us at Ho Chi Minh: (+84) 977 460 519 - Ha Noi: (+84) 964 618 859 - Email: love@itviec.com
+                            
+                        </div>
+                <div class="float-right pt-4 text-light align-self-end">
+                
+                    @2018 built by ITJOB. All right reserved.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div>
+        <script type="text/javascript" src="../public/lib/jquery-3.3.1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <script>
+            new WOW().init();
+        </script>
+        <script>
+            $(document).ready(function () {
+                $('.carousel').carousel({
+                    interval: 2000
+                });
+            });
+        </script>
+        <script src="../public/js/myjs.js"></script>
+    </div>
+</body>
+
+</html>

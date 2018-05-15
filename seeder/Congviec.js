@@ -54,7 +54,7 @@ new Promise((resolve) => {
         resolve(items);
     });
 }).then((items) => {
-    seeder.connect('mongodb://localhost:27017/itwork2018', function() {
+    seeder.connect('mongodb://quan:12345678@ds117540.mlab.com:17540/itjob', function() {
         let data = [{
             'model': 'Congviec',
             'documents': items

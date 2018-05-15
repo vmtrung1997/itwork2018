@@ -8,11 +8,10 @@ for(i=0; i < 15; i++){
           TenCongTy: faker.company.companyName(),
           logo: faker.image.image(),
           DiaChi: faker.address.city(),
-          LoaiCongViec: faker.random.arrayElement(['outSourcing','Product']),
-          SoLuong: faker.random.number(1,1000),
+          LoaiCongViec: faker.random.arrayElement(['Outsourse','Product']),
+          SoLuong: faker.random.number({min: 1,max:100}),
           ThoiGian: 'Monday - Friday',
-          OT: faker.random.arrayElement(['No OT', 'Extra salary for OT']),
-          MoTa: faker.lorem.paragraphs(4,"<br /><br />")
+          MoTa: faker.lorem.paragraphs(10,"/n")
         }
     )
 }

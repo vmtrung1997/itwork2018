@@ -5,7 +5,7 @@ let items = [];
 for(i=0; i < 15; i++){
     items.push(
         {
-            name : faker.random.words(1,2),
+          name : faker.random.arrayElement(['PHP', 'Javascript', 'SQL', 'NoSQL', 'Nodejs', 'Reactjs']),
         }
     )
 }

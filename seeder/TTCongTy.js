@@ -12,7 +12,7 @@ for(i=0; i < 15; i++){
           SoLuong: faker.random.number(1,1000),
           ThoiGian: 'Monday - Friday',
           OT: faker.random.arrayElement(['No OT', 'Extra salary for OT']),
-          MoTa: faker.lorem.paragraphs(4,"<br>")
+          MoTa: faker.lorem.paragraphs(4,"<br /><br />")
         }
     )
 }
@@ -23,7 +23,7 @@ let data = [{
 }]
 
 // connect mongodb
-seeder.connect('mongodb://localhost:27017/itwork2018', function() {
+seeder.connect('mongodb://quan:12345678@ds117540.mlab.com:17540/itjob', function() {
   seeder.loadModels([
     '../model/TTCongTy'  // load mongoose model 
   ]);

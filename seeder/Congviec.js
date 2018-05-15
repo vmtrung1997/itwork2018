@@ -8,7 +8,7 @@ const _           = require('lodash');
 var faker         = require('faker');
 
 new Promise((resolve) => {
-    mongoose.connect('mongodb://localhost:27017/itwork2018', {
+    mongoose.connect('mongodb://quan:12345678@ds117540.mlab.com:17540/itjob', {
         promiseLibrary: require('bluebird')
     });
     async.parallel([
